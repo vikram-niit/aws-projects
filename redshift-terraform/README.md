@@ -127,13 +127,19 @@ Replace <account-id> with your AWS account ID.
 
 ### ▶️ Deploying the Infrastructure
 1. Initialize Terraform
+```
 terraform init
+```
 
-2. Preview Changes
+3. Preview Changes
+```
 terraform plan
+```
 
-3. Apply Changes
+4. Apply Changes
+```
 terraform apply
+```
 
 ### 🧪 Example SQL Commands
 
@@ -167,5 +173,6 @@ SELECT * FROM users;
 ### 🧹 Cleanup
 
 To delete all created resources:
-
+```
 terraform destroy
+```
