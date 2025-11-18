@@ -170,6 +170,34 @@ Query the Table
 SELECT * FROM users;
 ```
 
+Create table orders and load data from S3
+```sql
+CREATE TABLE orders (
+    order_id       INTEGER,
+    customer_name  VARCHAR(255),
+    region         VARCHAR(100),
+    product        VARCHAR(255),
+    quantity       INTEGER,
+    price          DECIMAL(10,2),
+    order_date     DATE
+);
+```
+
+Load data from S3
+```sql
+COPY orders
+FROM 's3://sales-data-bucket-1760066349/sales_data.csv'
+IAM_ROLE 'arn:aws:iam::<account-id>:role/terraform-redshift-role'
+FORMAT AS CSV
+IGNOREHEADER 1
+DATEFORMAT 'DD-MM-YYYY';
+```
+
+Query the orders table
+```sql
+SELECT * from orders;
+```
+
 ### 🧹 Cleanup
 
 To delete all created resources:
