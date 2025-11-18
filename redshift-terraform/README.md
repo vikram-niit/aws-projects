@@ -170,7 +170,7 @@ Query the Table
 SELECT * FROM users;
 ```
 
-Create table orders and load data from S3
+Create table orders
 ```sql
 CREATE TABLE orders (
     order_id       INTEGER,
@@ -183,7 +183,7 @@ CREATE TABLE orders (
 );
 ```
 
-Load data from S3
+Load data from S3 into the orders table
 ```sql
 COPY orders
 FROM 's3://sales-data-bucket-1760066349/sales_data.csv'
